@@ -60,10 +60,17 @@
                         <div class="overlay-content">
                             <a href="/index">Дім</a>
                             <a href="/about">Про машини</a>
+                            {% if session %}
+                            <a href="/add_news">Додати новини</a>
+                            <a href="/logout">Вихід</a>
+                            {% else %}
+                            <a href="/login">Вхід</a>
+                            {% endif %}
+                            <!--
                             <a href="/car">Машини</a>
                             <a href="/blog">Блок</a>
-                            <a href="/contact">Звяжіться з нами</a>
-                            <a href="#">Логін</a>
+                            <a href="/contact">Звяжіться з нами</a>-->
+
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<!-- contact section -->
+<section class="contact_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>Exit</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="form_container">
+                    <form >
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="email">Input email</label>
+                                <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email id"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Input password</label>
+                            <input type="password" name="password" class="form-control" id="inputMessage" placeholder="Password"
+                                   required>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end contact section -->
+{% endblock %}
