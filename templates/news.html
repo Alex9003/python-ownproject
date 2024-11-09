@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+  <!-- about section -->
+
+<section class="about_section layout_padding2-top layout_padding-bottom ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-7 px-0">
+        <div class="img-box">
+          <img src="{{ url_for('static', filename='images/about-img.png')}}" alt="">
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <div class="detail-box">
+          <h1>News</h1>
+
+          {% for item in list_news %}
+          <img style="width:200px;" class="img-responsive" src="{{item.image}}" alt="">
+          <h4>{{item.name}}</h4>
+          <p>{{item.text}}</p>
+          {% if loop.index %3 ==0 %}
+          <div style="clear:both;"></div>
+          {% endif %}
+          {% endfor %}
+
+
+          <h3>
+            About Our Cars
+          </h3>
+          <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem
+          </p>
+          <a href="">
+            Read More
+          </a>
+          <div class="row">
+            {% if list_news.has_prev %}
+            <a href="{{ url_for('news', page=list_news.prev_num)}}">Prev</a>
+            {% endif %}
+
+            {% for page_num in list_news.iter_pages() %}
+            <a href="{{ url_for('news', page=list_news.page_num)}}">{{page_num}}</a>
+            {% endfor %}
+
+            {% if list_news.next_num %}
+            <a href="{{ url_for('news', page=list_news.next_num)}}">Next</a>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- end about section -->
+{% endblock %}
